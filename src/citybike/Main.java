@@ -3,14 +3,14 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        Bike bike1 = new Bike();
-        Bike bike2 = new Bike();
-        Bike bike3 = new Bike();
-        Bike bike4 = new Bike();
-        Bike bike5 = new Bike();
-        Bike bike6 = new Bike();
-        Bike bike7 = new Bike();
-        Bike bike8 = new Bike();
+        Bike bike1 = new Bike("yellow");
+        Bike bike2 = new Bike("blue");
+        Bike bike3 = new Bike("purple");
+        Bike bike4 = new Bike("red");
+        Bike bike5 = new Bike("green");
+        Bike bike6 = new Bike("orange");
+        Bike bike7 = new Bike("black");
+        Bike bike8 = new Bike("white");
 
         HashMap<Integer, Bike> bikes = new HashMap<>();
         bikes.put(bike1.getBikeID(), bike1);
@@ -22,9 +22,9 @@ public class Main {
         bikes.put(bike7.getBikeID(), bike7);
         bikes.put(bike8.getBikeID(), bike8);
 
-        Station station1 = new Station();
-        Station station2 = new Station();
-        Station station3 = new Station();
+        Station station1 = new Station("Wien Hbf");
+        Station station2 = new Station("Wien Meidling");
+        Station station3 = new Station("Wien Karlsplatz");
 
         HashMap<Integer, Station> stations = new HashMap<>();
         stations.put(station1.getStationID(), station1);
@@ -39,9 +39,10 @@ public class Main {
         station2.addBike(bike6);
         station2.addBike(bike7);
 
-        User user1 = new User();
-        User user2 = new User();
-        User user3 = new User();
-    }
-
+        User user1 = new User("Irati", "Larreina");
+        User user2 = new User("Max", "Power");
+        User user3 = new User("John", "Doe");
+        user1.pickBike(bike1, station1);
+        user1.dropBike(station2);
+        }
 }
